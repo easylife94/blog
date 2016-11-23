@@ -1,14 +1,16 @@
 var express = require('express');
 var handlebars = require('express-handlebars')
-					.create({defaultLayout:'main'});
+					.create({defaultLayout:'main',
+								extname:'.html'});
+var fortune = require('./lib/fortune');
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
 //禁用 x-powered-by 响应报头
 app.disable('x-powered-by');
 //设置模板引擎
-app.engine('handlebars',handlebars.engine);
-app.set('view engine','handlebars');
+app.engine('html',handlebars.engine);
+app.set('view engine','html');
 //设置应用监听端口号
 app.set('port',process.envPORT || 8080);
 //页面测试中间件
@@ -20,7 +22,7 @@ app.use(function(req,res,next){
 //这里的 get  代表HTTP GET
 app.get('/',function(req,res){
 	// res.type('text/plain');
-	res.render('home');
+	res.render('home',{fortune : fortune.getFortune(),});
 });
 app.get('/about',function(req,res){
 	// res.type('text/plain');
