@@ -1,9 +1,12 @@
+var static = require('./lib/static.js')
+
 module.exports = function(grunt){
 
 	//插件数组 ，加载插件
 	[
 		'grunt-cafe-mocha',
 		'grunt-contrib-jshint',
+		'grunt-contrib-less',
 		'grunt-exec',
 	].forEach(function(task){
 		grunt.loadNpmTasks(task);
@@ -16,6 +19,20 @@ module.exports = function(grunt){
 		jshint:{
 			app:['blog.js','public/js/**/*.js','lib/**/*.js'],
 			qa:['Gruntfiles.js','public/qa/**/*.js','qa/**/&.js'],
+		},
+		less:{
+			development:{
+				options:{
+					customFunctions:{
+						static:function(lessObject,name){
+							return 'url("'+static.map(name.value)+'")';
+						},
+					}
+				},
+				files:{
+					'public/css/main.css':'less/main.less'
+				}
+			},
 		},
 		exec:{
 			// linkchecker:{cmd:'linkchecker http://localhost:8080'}

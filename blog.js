@@ -1,9 +1,19 @@
 var express = require('express');
+var static = require('./lib/static');
 var handlebars = require('express-handlebars')
-					.create({defaultLayout:'main',
-								extname:'.html'});
-var fortune = require('./lib/fortune');
+					.create({
+								defaultLayout:'main',
+								extname:'.html',
+								helpers:{
+									static:function(name){
+										return static.map(name);
+									},
+								}
+							});
+
+var routes = require('./lib/routes.js');
 var app = express();
+
 
 app.use(express.static(__dirname + '/public'));
 //禁用 x-powered-by 响应报头
@@ -19,21 +29,11 @@ app.use(function(req,res,next){
 									req.query.test === '1';
 	next();
 });
-//这里的 get  代表HTTP GET
-app.get('/',function(req,res){
-	// res.type('text/plain');
-	res.render('home',{fortune : fortune.getFortune(),});
-});
-app.get('/about',function(req,res){
-	// res.type('text/plain');
-	res.render('about',{
-		pageTestScript:'/qa/tests-about.js'
-	});
 
-});
-app.get('/contact',function(req,res){
-	res.render('contact');
-});
+//加载路由
+routes(app);
+
+
 
 //use  中间件
 app.use(function(req,res){

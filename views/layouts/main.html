@@ -2,11 +2,12 @@
 <html>
 	<head>
 		<title>Blog</title>
-		<link href="/img/logo.ico" rel="shortcut icon">
+		<link href="{{static '/img/logo.ico'}}" rel="shortcut icon">
 		{{#if showTests}}
-			<link rel="stylesheet" href="/vendor/mocha.css">
+			<link rel="stylesheet" href="{{static '/vendor/mocha.css'}}">
 		{{/if}}
 		<script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
+		<link rel="stylesheet" href="{{static '/css/main.css'}}"/>
 	</head>
 	<body>
 	{{{body}}}
