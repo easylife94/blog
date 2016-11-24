@@ -2,15 +2,43 @@
 <html>
 	<head>
 		<title>Blog</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" >
 		<link href="{{static '/img/logo.ico'}}" rel="shortcut icon">
 		{{#if showTests}}
 			<link rel="stylesheet" href="{{static '/vendor/mocha.css'}}">
 		{{/if}}
+		<link href="{{static '/vendor/bootstrap/v3.3.0/css/bootstrap.min.css'}}" rel="stylesheet"/>
+		<link href="{{static '/css/main.css'}}" rel="stylesheet"/>
 		<script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
-		<link rel="stylesheet" href="{{static '/css/main.css'}}"/>
+		<script src="{{static '/vendor/bootstrap/v3.3.0/js/bootstrap.min.js'}}"></script>
+		
 	</head>
 	<body>
-	{{{body}}}
+		<div class="container-fluid">
+			<div class="nav-bar-blog">
+					<a class="btn btn-blog-menu">
+						<span class="glyphicon glyphicon-th-large"></span>
+					</a>
+				<div class="my-info">
+					<div class="my-avatar">
+						<img src="{{static '/img/blog-avatar.png'}}">
+					</div>
+					<div class="my-name">
+						<span>easy life</span>
+					</div>
+					<div class="my-words">
+						Do not fear what you don't know.<br/>
+						Do not fear what you don't know.
+					</div>		
+				</div>
+					
+			</div>
+			<div class="content-blog">
+				{{{body}}}
+			</div>
+		</div>
+
+	
 
 	
 	{{#if showTests}}
@@ -22,7 +50,7 @@
 			mocha.ui('tdd');
 			var assert = chai.assert;
 		</script>
-		<script src="/qa/tests-global.js"></script>
+		<!-- <script src="/qa/tests-global.js"></script> -->
 		{{#if pageTestScript}}
 		<script src="{{pageTestScript}}"></script>
 		{{/if}}

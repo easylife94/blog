@@ -9,8 +9,10 @@
   "author": "陈威",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.2",
     "node-mysql": "^0.4.2"
   },
   "devDependencies": {

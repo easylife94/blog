@@ -35,7 +35,7 @@ module.exports = function(grunt){
 			},
 		},
 		exec:{
-			// linkchecker:{cmd:'linkchecker http://localhost:8080'}
+			 linkchecker:{cmd:'linkchecker http://localhost:8080'}
 		}
 	});
 	//注册任务

@@ -12,6 +12,8 @@ var handlebars = require('express-handlebars')
 							});
 
 var routes = require('./lib/routes.js');
+var credentials = require('./credentials.js')
+
 var app = express();
 
 
@@ -29,7 +31,10 @@ app.use(function(req,res,next){
 									req.query.test === '1';
 	next();
 });
-
+//设置cookie中间件
+app.use(require('cookie-parser')(credentials.cookieSecret))
+//设置session中间件
+app.use(require('express-session')());
 //加载路由
 routes(app);
 
