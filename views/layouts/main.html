@@ -16,25 +16,37 @@
 	<body>
 		<div class="container-fluid">
 			<div class="nav-bar-blog">
+				<div class="blog-menu">
 					<a class="btn btn-blog-menu">
 						<span class="glyphicon glyphicon-th-large"></span>
 					</a>
+				</div>	
 				<div class="my-info">
 					<div class="my-avatar">
 						<img src="{{static '/img/blog-avatar.png'}}">
 					</div>
 					<div class="my-name">
-						<span>easy life</span>
+						<span>Easy life</span>
 					</div>
 					<div class="my-words">
-						Do not fear what you don't know.<br/>
-						Do not fear what you don't know.
+						<span class="blog-quot blog-quot-left">「 </span>
+						 
+						Do not fear what you don't know. 
+						<span class="blog-quot blog-quot-right"> 」</span>
 					</div>		
+				</div>
+				<div class="photo-info">
+					<span class="glyphicon glyphicon-info-sign "></span>
 				</div>
 					
 			</div>
 			<div class="content-blog">
 				{{{body}}}
+			</div>
+
+			<div class="footer">
+					
+
 			</div>
 		</div>
 
