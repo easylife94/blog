@@ -11,6 +11,7 @@ body {
 	height: 100%;
 	width:350px;
 	background-image: url("/img/background.jpg");
+	background-position:35% 35%
 }
 .content-blog{
    	margin-left :350px;
@@ -59,7 +60,7 @@ body {
     color:#333;
 }
 .btn-blog-menu:hover{
-	color:white;
+	color:#fcf8e3;
 	background-color:gray;
 	
 }
@@ -94,6 +95,22 @@ body {
     text-align: right;
     font-size:20px;
 }
+.btn-blog-nav-zoom{
+    font-size: 15px;
+    color: #333;
+    float:right;
+}
+.btn-blog-nav-zoom:hover{
+	cursor: pointer;
+}
+
+
+.photo-by{
+	display:none;
+	font-size:18px;
+}
+
+
 
 @media screen and (max-width: 700px) {
    .nav-bar-blog {
@@ -137,5 +154,8 @@ body {
 	}
 	.photo-info{
 	    font-size:15px;
+	}
+	.btn-blog-nav-zoom{
+	    display:none;
 	}
 }

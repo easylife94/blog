@@ -11,6 +11,7 @@
 		<link href="{{static '/css/main.css'}}" rel="stylesheet"/>
 		<script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
 		<script src="{{static '/vendor/bootstrap/v3.3.0/js/bootstrap.min.js'}}"></script>
+		<script src="{{static '/vendor/jquery.transit.js'}}"></script>
 		
 	</head>
 	<body>
@@ -19,6 +20,9 @@
 				<div class="blog-menu">
 					<a class="btn btn-blog-menu">
 						<span class="glyphicon glyphicon-th-large"></span>
+					</a>
+					<a class=" btn-blog-nav-zoom">
+						<span class="glyphicon glyphicon-fullscreen"></span>
 					</a>
 				</div>	
 				<div class="my-info">
@@ -37,6 +41,7 @@
 				</div>
 				<div class="photo-info">
 					<span class="glyphicon glyphicon-info-sign "></span>
+					<span class="photo-by">By easylif</span>
 				</div>
 					
 			</div>
@@ -68,5 +73,8 @@
 		{{/if}}
 		<script>mocha.run();</script>
 	{{/if}}
+
+
+	<script src="{{static '/js/main.js'}}"></script>
 	</body>
 </html>
