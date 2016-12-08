@@ -1,4 +1,5 @@
 var express = require('express');
+var config = require('config');
 var static = require('./lib/static');
 var handlebars = require('express-handlebars')
 					.create({

@@ -1,0 +1,18 @@
+{
+	"owner":{
+		"name" : "Someone",
+		"avatar":"",
+		"introduction":"Someone like write blog"
+
+	},
+	"blog":{
+		"name" : "Someone's Blog"
+	},
+	"database":{
+		"host":"localhost",
+		"user":"root",
+		"password":"1.root.1",
+		"database":"blog",
+		"port":3306
+	}
+}

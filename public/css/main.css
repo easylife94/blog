@@ -134,7 +134,6 @@ footer {
   margin: 0;
 }
 .article-s {
-  max-height: 600px;
   border-right: 1.5px solid #d9d9d9;
   border-left: 1.5px solid #d9d9d9;
   border-top: 1.5px solid #d9d9d9;
@@ -142,7 +141,6 @@ footer {
   padding: 0;
 }
 .more-article {
-  border-top: 1.5px dashed #d9d9d9;
   text-align: center;
   padding: 20px 0 20px 0;
   margin: 0;
@@ -192,6 +190,7 @@ footer {
 .aritilce-waterfall-l {
   margin: 0px;
   padding: 0px;
+  border-bottom: 1.5px dashed #d9d9d9;
 }
 .article-bars {
   padding: 0px;
@@ -199,16 +198,6 @@ footer {
   background-color: #ddd;
   border-color: #ddd;
   height: 0px;
-  transition: height 1s;
-  -moz-transition: height 1s;
-  /* Firefox 4 */
-  -webkit-transition: height 1s;
-  /* Safari and Chrome */
-  -o-transition: height 1s;
-  /* Opera */
-}
-.article-bars:hover {
-  heigh: 70px;
 }
 .article-bars-btn {
   padding: 0;
@@ -237,7 +226,7 @@ footer {
   /* Opera */
 }
 .artice-comment-s {
-  background-color: #ddd;
+  background-color: #f5f5f5;
   color: #31708f;
   transition: background-color 1s;
   -moz-transition: background-color 1s;
@@ -256,7 +245,7 @@ footer {
 }
 .artice-comment-s:hover {
   background-color: #31708f;
-  color: #ddd;
+  color: #f5f5f5;
   border-color: #a94242;
 }
 .artice-like-s:hover {

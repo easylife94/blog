@@ -2,86 +2,66 @@
 <div class="container-fluid home">
 	<div class="row article-waterfall">
 		<div class="col-md-6 aritilce-waterfall-r">
-
-			<div class="col-sm-12 article-s">
-				<div class="col-md-12 article-img-s">
-					<img src="http://upload-images.jianshu.io/upload_images/178644-05f9ce3743c8913e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" />
-				</div>
-				<div class="col-md-12 article-title-s" >
-					人工智能时代，你是2%的受益者，还是98%的被淘汰者？
-				</div>
-				<div class="col-md-12 article-content-s" >
-					﻿﻿最近美剧《西部世界》很火，豆瓣5.1万人评分，给了超高分9.0分。﻿
-					在未来，有一座巨型高科技成人乐园-西部世界，游客在这里可以无视法律随意发泄性欲和尽情杀戮。﻿
-
-					遭受摧残和虐杀的对象，其实是具有人工智能的人造人，他们与人类非常接近，有血有肉，用肉眼几乎无法辨认。﻿
-
-					但随着人工智能获得自主意识，乐园濒临崩溃……
-
-				</div>
-				<div class="col-md-12 article-bars" >
-					<div class="col-xs-6 article-bars-btn artice-like-s">
-						<i class="glyphicon glyphicon-heart"></i>
+			{{#each articles}}
+				<div class="col-sm-12 article-s hidden">
+					<div class="col-md-12 article-img-s">
+						<a href="/article/{{id}}"><img src="{{img}}" /></a>
 					</div>
-					<div class="col-xs-6 article-bars-btn artice-comment-s">
-						<i class="glyphicon glyphicon-comment"></i>
+					<div class="col-md-12 article-title-s" >
+						{{title}}
+					</div>
+					<div class="col-md-12 article-content-s" >
+						{{content}}
+					</div>
+					<div class="col-md-12 article-bars" >
+						<div class="col-xs-6 article-bars-btn artice-like-s">
+							<i class="glyphicon glyphicon-heart"></i>
+						</div>
+						<div class="col-xs-6 article-bars-btn artice-comment-s">
+							<i class="glyphicon glyphicon-comment"></i>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-sm-12 article-s">
-				<div class="col-md-12 article-img-s">
-					<img src="http://upload-images.jianshu.io/upload_images/178644-05f9ce3743c8913e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" />
-				</div>
-				<div class="col-md-12 article-title-s" >
-					人工智能时代，你是2%的受益者，还是98%的被淘汰者？
-				</div>
-				<div class="col-md-12 article-content-s" >
-					﻿﻿最近美剧《西部世界》很火，豆瓣5.1万人评分，给了超高分9.0分。﻿
-					在未来，有一座巨型高科技成人乐园-西部世界，游客在这里可以无视法律随意发泄性欲和尽情杀戮。﻿
-
-					遭受摧残和虐杀的对象，其实是具有人工智能的人造人，他们与人类非常接近，有血有肉，用肉眼几乎无法辨认。﻿
-
-					但随着人工智能获得自主意识，乐园濒临崩溃……
-
-				</div>
-			</div>
+			{{/each}}
 		</div>
+
 		<div class="col-md-6 aritilce-waterfall-l">
-
-			<div class="col-sm-12 article-s">
-				<div class="col-md-12 article-img-s">
-					<img src="http://upload-images.jianshu.io/upload_images/178644-05f9ce3743c8913e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" />
-				</div>
-				<div class="col-md-12 article-title-s" >
-					人工智能时代，你是2%的受益者，还是98%的被淘汰者？
-				</div>
-				<div class="col-md-12 article-content-s" >
-					﻿﻿最近美剧《西部世界》很火，豆瓣5.1万人评分，给了超高分9.0分。﻿
-					在未来，有一座巨型高科技成人乐园-西部世界，游客在这里可以无视法律随意发泄性欲和尽情杀戮。﻿
-
-					遭受摧残和虐杀的对象，其实是具有人工智能的人造人，他们与人类非常接近，有血有肉，用肉眼几乎无法辨认。﻿
-
-					但随着人工智能获得自主意识，乐园濒临崩溃……
-
-					﻿
-
-					而在IT产业界，人工智能也愈发热门，被称为下一个“风口”。﻿
-
-					就在此时，我得知吴军出了本人工智能的新书《智能时代》。﻿
-
-					因为对人工智能很感兴趣，加之相信吴军的眼界和文笔，于是赶紧买来阅读。﻿
-
-					几乎是一口气读完，合上书后大呼过瘾，总算搞明白人工智能的来龙去脉了。﻿
-
-					文／酷拉皮卡（简书作者）
-					原文链接：http://www.jianshu.com/p/49a483747a89
-					著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。
-				</div>
-			</div>
+			
 		</div>
+		<script type="text/javascript">
+			//加载完后判断显示器宽度,如果大于bootstrap定义的东都屏幕则将文章分到左右两边的div
+			var width = $(window).width();
+			
+			$(".article-s").each(function(index){
+				if(index % 2 == 1 && width > 992){//下标偶数在左边，基数在右边
+					$(this).appendTo($(".aritilce-waterfall-l:first"));
+					console.log($(".aritilce-waterfall-l:first"));
+				}
+				$(this).removeClass("hidden");
+			});
+			
+		</script>
 
 	</div>
 	<div class="row more-article">
 		<button class="btn btn-primary btn-lg more-article-btn">更多 · 文章</button>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(window).resize(function(){
+   		if($(window).width() > 992 && $(".aritilce-waterfall-l .article-s").length == 0){
+			$(".article-s").each(function(index){
+				if(index % 2 == 1){//下标偶数在左边，基数在右边
+					$(this).appendTo($(".aritilce-waterfall-l:first"));
+				}
+				$(this).removeClass("hidden");
+			});
+		}else if($(window).width() < 992 ){
+			console.log(1);
+			$(".aritilce-waterfall-l .article-s").each(function(index){
+				$(this).appendTo($(".aritilce-waterfall-r:first"));
+			});
+		}
+	});
+</script>
