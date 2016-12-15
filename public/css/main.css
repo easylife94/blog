@@ -182,6 +182,21 @@ footer {
   font-size: 20px;
   font-weight: bold;
 }
+.article-title-s a {
+  color: black;
+}
+.article-title-s a:link {
+  text-decoration: none;
+}
+.article-title-s a:visited {
+  text-decoration: none;
+}
+.article-title-s a:hover {
+  text-decoration: none;
+}
+.article-title-s a:active {
+  text-decoration: none;
+}
 .article-content-s {
   padding: 10px;
   color: rgba(128, 128, 128, 0.85);
@@ -256,6 +271,10 @@ footer {
 .article-bars-btn i {
   line-height: 70px;
   font-size: 30px;
+}
+i.like-num,
+i.comment-num {
+  font-size: 10px;
 }
 @media screen and (max-width: 700px) {
   .nav-bar-blog {

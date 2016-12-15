@@ -1,1 +1,10 @@
-<h1>文章 - {{name}}</h1>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<h1>文章 - {{article.title}}</h1>
+<h4>日期：{{article.date}}</h3>
+<h4>标签：{{article.tags}}</h4>
+<img>标签：{{article.img}}</h4>
+<div>
+{{article.content}}
+</div>

@@ -8,17 +8,25 @@
 						<a href="/article/{{id}}"><img src="{{img}}" /></a>
 					</div>
 					<div class="col-md-12 article-title-s" >
-						{{title}}
+						<a class="article-title" href="/article/{{id}}">{{title}}</a>
 					</div>
 					<div class="col-md-12 article-content-s" >
-						{{content}}
+						{{brief}}
 					</div>
 					<div class="col-md-12 article-bars" >
 						<div class="col-xs-6 article-bars-btn artice-like-s">
 							<i class="glyphicon glyphicon-heart"></i>
+							
+
+							<i class="like-num">
+								{{like_num}}
+							</i>
 						</div>
 						<div class="col-xs-6 article-bars-btn artice-comment-s">
 							<i class="glyphicon glyphicon-comment"></i>
+							<i class="comment-num">
+								{{comment_num}}
+							</i>
 						</div>
 					</div>
 				</div>
