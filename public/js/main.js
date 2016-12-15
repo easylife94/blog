@@ -22,7 +22,7 @@ $('.btn-blog-menu span').click(function(){
 	$(this).transition({ rotate: '45deg' });
 });
 $('.article-s').hover(function(){
-	console.log($(this).find(".article-bars"))
+	console.log($(this).find(".article-bars"));
 	$(this).find(".article-bars").transition({ height: '70px' });
 });
 $('.article-s').mouseleave(function(){

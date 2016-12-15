@@ -13,10 +13,9 @@ var handlebars = require('express-handlebars')
 							});
 
 var routes = require('./lib/routes.js');
-var credentials = require('./credentials.js')
+var credentials = require('./credentials.js');
 
 var app = express();
-
 
 app.use(express.static(__dirname + '/public'));
 //禁用 x-powered-by 响应报头
@@ -33,13 +32,11 @@ app.use(function(req,res,next){
 	next();
 });
 //设置cookie中间件
-app.use(require('cookie-parser')(credentials.cookieSecret))
+app.use(require('cookie-parser')(credentials.cookieSecret));
 //设置session中间件
 app.use(require('express-session')());
 //加载路由
 routes(app);
-
-
 
 //use  中间件
 app.use(function(req,res){
