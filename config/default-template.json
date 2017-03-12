@@ -1,0 +1,19 @@
+{
+	"owner":{
+		"name" : "Someone",
+		"avatar":"",
+		"introduction":"Someone like write blog"
+
+	},
+	"blog":{
+		"name" : "Someone's Blog",
+		"cookieSecret" : "blog"
+	},
+	"database":{
+		"host":"localhost",
+		"user":"root",
+		"password":"root",
+		"database":"blog",
+		"port":3306
+	}
+}

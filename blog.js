@@ -1,5 +1,7 @@
 var express = require('express');
 var config = require('config');
+var config =  require("config");
+var bodyParser = require('body-parser');
 var static = require('./lib/static');
 var handlebars = require('express-handlebars')
 					.create({
@@ -14,7 +16,6 @@ var handlebars = require('express-handlebars')
 
 var routes = require('./lib/routes.js');
 var credentials = require('./credentials.js');
-
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -35,14 +36,25 @@ app.use(function(req,res,next){
 app.use(require('cookie-parser')(credentials.cookieSecret));
 //设置session中间件
 app.use(require('express-session')());
+
+// see https://github.com/expressjs/body-parser
+// 添加 body-parser 中间件就可以了
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+
 //加载路由
 routes(app);
+
+
 
 //use  中间件
 app.use(function(req,res){
 	res.status(404);
 	res.render('404');
 });
+
+
 
 app.use(function(err,req,res,next){
 	console.log(err.stack);

@@ -2,6 +2,7 @@
 <div class="container-fluid home">
 	<div class="row article-waterfall">
 		<div class="col-md-6 aritilce-waterfall-r">
+			<input id="odest-time" type="hidden" value="{{odestTime}}"/>
 			{{#each articles}}
 				<div class="col-sm-12 article-s hidden">
 					<div class="col-md-12 article-img-s">
@@ -16,8 +17,6 @@
 					<div class="col-md-12 article-bars" >
 						<div class="col-xs-6 article-bars-btn artice-like-s">
 							<i class="glyphicon glyphicon-heart"></i>
-							
-
 							<i class="like-num">
 								{{like_num}}
 							</i>
@@ -39,20 +38,44 @@
 		<script type="text/javascript">
 			//加载完后判断显示器宽度,如果大于bootstrap定义的东都屏幕则将文章分到左右两边的div
 			var width = $(window).width();
-			
 			$(".article-s").each(function(index){
-				if(index % 2 == 1 && width > 992){//下标偶数在左边，基数在右边
+				if(index % 2 == 1 && width > 992){//下标偶数在左边，奇数在右边
 					$(this).appendTo($(".aritilce-waterfall-l:first"));
-					console.log($(".aritilce-waterfall-l:first"));
 				}
 				$(this).removeClass("hidden");
 			});
 			
+			
 		</script>
 
 	</div>
+	<div class="more-article-loading">
+		<div class="spinner">
+		  <div class="spinner-container container1">
+		    <div class="circle1"></div>
+		    <div class="circle2"></div>
+		    <div class="circle3"></div>
+		    <div class="circle4"></div>
+		  </div>
+		  <div class="spinner-container container2">
+		    <div class="circle1"></div>
+		    <div class="circle2"></div>
+		    <div class="circle3"></div>
+		    <div class="circle4"></div>
+		  </div>
+		  <div class="spinner-container container3">
+		    <div class="circle1"></div>
+		    <div class="circle2"></div>
+		    <div class="circle3"></div>
+		    <div class="circle4"></div>
+		  </div>
+		</div>
+	</div>
+
 	<div class="row more-article">
-		<button class="btn btn-primary btn-lg more-article-btn">更多 · 文章</button>
+		<button id="more-article" class="btn btn-primary btn-lg more-article-btn">
+			<span>更多 · 文章</span> 
+		</button>
 	</div>
 </div>
 

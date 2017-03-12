@@ -9,6 +9,7 @@
   "author": "陈威",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "config": "^1.24.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
@@ -16,6 +17,7 @@
     "express-session": "^1.14.2",
     "jquery": "^3.1.1",
     "jquery.transit": "^0.9.12",
+    "moment": "^2.17.1",
     "mysql": "^2.12.0",
     "node-mysql": "^0.4.2"
   },
