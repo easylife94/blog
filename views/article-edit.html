@@ -9,7 +9,7 @@
         </div>
     </div>
 </div> -->
-<textarea id="text-input" oninput="this.editor.update()"
+<!-- <textarea id="text-input" oninput="this.editor.update()"
               rows="6" cols="60">Type **Markdown** here.</textarea>
 <div id="preview"> </div>
 <script src="{{static '/vendor/markdown.js'}}"></script>
@@ -23,4 +23,255 @@
   }
   var $$ = function (id) { return document.getElementById(id); };
   new Editor($$("text-input"), $$("preview"));
+</script> -->
+<!--  <link href="{{static '/vendor/hplus/css/plugins/codemirror/codemirror.css'}}" rel="stylesheet">
+ <link href="{{static '/vendor/hplus/css/plugins/codemirror/ambiance.css'}}" rel="stylesheet">
+ <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>基本编辑器</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <p class="m-b-lg">
+                            <strong>CodeMirror</strong> 是一个灵活的文本代码编辑器。它是专门用于编辑代码，并附带一些语言模块和插件，实现更先进的编辑功能。
+                        </p>
+
+<textarea id="code1">
+<script>
+    function animationHover(element, animation) {
+        element = $(element);
+        element.hover(
+            function () {
+                element.addClass('animated ' + animation);
+            },
+            function () {
+                window.setTimeout(function () {
+                    element.removeClass('animated ' + animation);
+                }, 2000);
+            });
+    }
+</script>
+</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>主题示例</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <p class="m-b-lg">
+                            <strong>CodeMirror</strong>提供丰富的API接口和CSS主题，详情请访问
+                            <a href="http://codemirror.net/" target="_blank">http://codemirror.net/</a>
+                        </p>
+<textarea id="code2">
+var SpeechApp = angular.module('SpeechApp', []);
+
+function VoiceCtrl($scope) {
+
+    $scope.said='...';
+
+    $scope.helloWorld = function() {
+        $scope.said = "Hello world!";
+    }
+
+    $scope.commands = {
+        'hello (world)': function() {
+            if (typeof console !== "undefined") console.log('hello world!')
+            $scope.$apply($scope.helloWorld);
+        },
+        'hey': function() {
+            if (typeof console !== "undefined") console.log('hey!')
+            $scope.$apply($scope.helloWorld);
+        }
+    };
+
+    annyang.debug();
+    annyang.init($scope.commands);
+    annyang.start();
+}
+</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="code3" style="height: 500px;width: 500px;">
+	
+/**
+	 * 上传tae用户虚拟机数据
+	 * @return
+	 */
+	public String uploadTaeUserVmachine(){
+		if(StringUtils.isBlank(userVm)){
+			jsonUtil.setResultJson(jsonObject, "-1", "非法参数:userVm为空", null);
+		}if(StringUtils.isBlank(mac)){
+			jsonUtil.setResultJson(jsonObject, "-1", "非法参数:mac为空", null);
+		}if(StringUtils.isBlank(authorizecode)){
+			jsonUtil.setResultJson(jsonObject, "-1", "非法参数:authorizecode为空", null);
+		}else{
+			if(remoteService.verificationAuthorizecode(mac,authorizecode)){//验证授权码
+				
+				JSONArray list  = JSONArray.fromObject(userVm);
+				for(Object tmp : list){
+					JSONObject jo = JSONObject.fromObject(tmp);
+					remoteService.saveUserVmachine(jo.getString("userName"), mac,jo.getString("vmNames"));
+				}
+				jsonUtil.setResultJson(jsonObject, "1", "success", null);
+			}else{
+				logger.info("授权码验证失败");
+				jsonUtil.setResultJson(jsonObject, "-1", "授权码验证不通过", null);
+			}
+			
+		}
+		
+		
+		return "success";
+	}
+
+</div>
+<script src="{{static '/vendor/hplus/js/jquery.min.js?v=2.1.4'}}"></script>
+<script src="{{static '/vendor/hplus/js/bootstrap.min.js?v=3.3.6'}}"></script>
+<script src="{{static '/vendor/hplus/js/plugins/peity/jquery.peity.min.js'}}"></script>
+<script src="{{static '/vendor/hplus/js/plugins/codemirror/codemirror.js'}}"></script>
+<script src="{{static '/vendor/hplus/js/plugins/codemirror/mode/javascript/javascript.js'}}"></script>
+<script src="{{static '/vendor/hplus/js/content.min.js?v=1.0.0'}}"></script>
+<script>
+    $(document).ready(function(){
+    	var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"),
+    				{
+    					lineNumbers:true,
+    					matchBrackets:true,
+    					styleActiveLine:true,
+    					theme:"ambiance"
+    				});
+    	var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"),
+    				{
+    					lineNumbers:true,
+    					matchBrackets:true,
+    					styleActiveLine:true
+    				})
+
+
+    	console.log( CodeMirror.modes);
+    	 CodeMirror(document.getElementById("code3"),
+    				{
+    					lineNumbers:true,
+    					matchBrackets:true,
+    					styleActiveLine:true,
+    					value:$("#code3").html(),
+    					readOnly:true,
+    					mode: "text/x-java"
+    				})
+    });
+</script> -->
+<link rel="stylesheet" href="{{static '/vendor/editormd/css/editormd.css'}}" />
+
+
+
+<input id="article-title" class="editor-title" type="text" name="article-title" value="无标题文章">
+
+<div id="test-editormd">
+    <textarea id="article-context" style="display:none;">[TOC]
+
+#### Disabled options
+
+- TeX (Based on KaTeX);
+- Emoji;
+- Task lists;
+- HTML tags decode;
+- Flowchart and Sequence Diagram;
+
+#### Editor.md directory
+
+    editor.md/
+            lib/
+            css/
+            scss/
+            tests/
+            fonts/
+            images/
+            plugins/
+            examples/
+            languages/     
+            editormd.js
+            ...
+
+```html
+&lt;!-- English --&gt;
+&lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
+
+&lt;!-- 繁體中文 --&gt;
+&lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
+```
+</textarea>
+</div>
+<script src="{{static '/vendor/editormd/js/editormd.min.js'}}"></script>
+<script type="text/javascript">
+	var testEditor;
+	var toolbars = ["undo", "redo", "|", 
+					"bold", "hr", "del","quote","italic","|",
+					"h1","h2", "h3", "h4", "h5", "h6", "|",
+					"list-ul","list-ol","|",
+					"link","reference-link","image","code","preformatted-text","code-block","table","|",
+					"watch", "fullscreen",
+
+					"||", 
+					"status","save","publish","|",
+					]
+    $(function() {
+        testEditor = editormd("test-editormd", {
+            width   : "100%",
+            height  : "100%",
+            syncScrolling : "single",
+            path    : "{{static '/vendor/editormd/lib/'}}",
+            toolbarIcons : function() { return toolbars },
+            toolbarIconsClass : {
+	            save : "fa-save" , // 指定一个FontAawsome的图标类
+	            publish: "fa-mail-forward"
+	        },
+	        toolbarCustomIcons : {
+	            status   : "<span class='editor-status' >已保存</span>",
+	        },
+	        lang : {
+	            toolbar : {
+	                publish : "发布文章",
+	                save:"保存文章"
+	            }
+	        },
+            imageUpload : true,
+            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL : "/admin/article/edit/upload-img",
+            /*
+             上传的后台只需要返回一个 JSON 数据，结构如下：
+             {
+                success : 0 | 1,           // 0 表示上传失败，1 表示上传成功
+                message : "提示的信息，上传成功或上传失败及错误信息等。",
+                url     : "图片地址"        // 上传成功时才返回
+             }
+             */
+            onchange : function() {
+		        console.log($("#test-editormd textarea").val());
+		        // ....
+				save();
+		       
+		    }
+        });
+    });
+
+    function save(){
+    	 $.ajax({
+        	url:"/admin/article/edit",
+        	type:"post",
+        	data:{
+        		context:$("#article-context").val(),
+        		title:$("#article-title").val(),
+        	}
+        });
+    }
 </script>
