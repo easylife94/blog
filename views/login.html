@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Blog - Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" >
+		<link href="{{static '/img/logo.ico'}}" rel="shortcut icon">
+		{{#if showTests}}
+			<link rel="stylesheet" href="{{static '/vendor/mocha.css'}}">
+		{{/if}}
+		<link href="{{static '/vendor/hplus/css/bootstrap.min14ed.css?v=3.3.6'}}" rel="stylesheet"/>
+		<link href="{{static '/vendor/hplus/css/font-awesome.min93e3.css?v=4.4.0'}}" rel="stylesheet"/>
+		<link href="{{static '/vendor/hplus/css/animate.min.css'}}" rel="stylesheet"/>
+		<link href="{{static '/vendor/hplus/css/style.min862f.css?v=4.1.0'}}" rel="stylesheet"/>
+		<link href="{{static '/css/main.css'}}" rel="stylesheet"/>
+	</head>
+	<body class="gray-bg">
+    <div class="alert alert-danger hide" id="login-err"></div>
+	<div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+               <div class="my-avatar">
+					<img src="{{static '/img/blog-avatar.png'}}">
+				</div>
+
+            </div>
+            <h3>Good Good Study</h3>
+
+            <form class="m-t" role="form" action="/admin/login" method="post">
+                <div class="form-group">
+                    <input type="text" name="admin" class="form-control" placeholder="Admin" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                </div>
+                <button id="submit" type="submit" class="btn btn-primary block full-width m-b">Go !!!</button>
+            </form>
+        </div>
+    </div>	
+    <script src="{{static '/vendor/hplus/js/jquery.min.js?v=2.1.4'}}"></script>	
+    <script src="{{static '/vendor/hplus/js/bootstrap.min.js?v=3.3.6'}}"></script>	
+    <script src="{{static '/js/main.js'}}"></script>	
+    <script type="text/javascript">
+    
+
+
+    $("form").submit(function(e){
+        var admin = $("input[name='admin']").val();
+        var password = $("input[name='password']").val();
+        $.ajax({
+            url:"/admin/login",
+            type:"post",
+            data:{admin:admin,password:password},
+            success:function(json){
+                if(json.code == 1){
+                    window.location = "/admin/console";
+                }else{
+                    $("#login-err").html(json.err);
+                }
+            },
+            error:function(){
+                
+            }
+        });
+         e.preventDefault();  
+    });
+    </script>	
+	</body>
+</html>

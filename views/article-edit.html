@@ -24,6 +24,7 @@
   var $$ = function (id) { return document.getElementById(id); };
   new Editor($$("text-input"), $$("preview"));
 </script> -->
+<<<<<<< Updated upstream
 <!--  <link href="{{static '/vendor/hplus/css/plugins/codemirror/codemirror.css'}}" rel="stylesheet">
  <link href="{{static '/vendor/hplus/css/plugins/codemirror/ambiance.css'}}" rel="stylesheet">
  <div class="wrapper wrapper-content  animated fadeInRight">
@@ -271,3 +272,51 @@ function VoiceCtrl($scope) {
         });
     }
 </script>
+=======
+ <link rel="stylesheet" type="text/css" href="{{static '/vendor/hplus/css/plugins/markdown/bootstrap-markdown.min.css'}}" />
+
+ 
+
+<div class="row">
+
+	
+    <div class="col-md-12" >
+    	<div  class="col-md-6" >
+    		<textarea id="markdown-editor" name="content" rows="10"></textarea>
+    	</div>
+		<div id="twitter-footer" class="well col-md-6"  style="height:100%;">
+			
+		</div>
+    </div>
+</div>
+<script src="{{static '/vendor/hplus/js/jquery.min.js?v=2.1.4'}}"></script>
+<script src="{{static '/vendor/hplus/js/bootstrap.min.js?v=3.3.6'}}"></script>
+<script src="{{static '/vendor/hplus/js/content.min.js?v=1.0.0'}}"></script>
+<script src="{{static '/vendor/hplus/js/plugins/markdown/markdown.js'}}"></script>
+<script src="{{static '/vendor/hplus/js/plugins/markdown/to-markdown.js'}}"></script>
+<script type="text/javascript" src="{{static '/vendor/hplus/js/plugins/markdown/bootstrap-markdown.js'}}"></script>
+<script type="text/javascript" src="{{static '/vendor/hplus/js/plugins/markdown/bootstrap-markdown.zh.js'}}"></script>
+<script type="text/javascript">
+		$('#markdown-editor').markdown({
+		hiddenButtons:'cmdPreview',
+		onChange:function(e){
+			var content = e.parseContent(),
+				content_length = (content.match(/\n/g)||[]).length + content.length
+			$('#twitter-footer').show().html(content);
+
+
+			// if (content == '') {
+			// 	$('#twitter-footer').hide()
+			// } else {
+			// 	$('#twitter-footer').show().html(content)
+			// }
+
+			// if (content_length > 140) {
+			// 	$('#twitter-counter').removeClass('text-success').addClass('text-danger').html(content_length-140+' character surplus.')
+			// } else {
+			// 	$('#twitter-counter').removeClass('text-danger').addClass('text-success').html(140-content_length+' character left.')
+			// }
+		}
+	})
+</script>
+>>>>>>> Stashed changes

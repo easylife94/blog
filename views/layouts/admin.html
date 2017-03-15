@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Admin - {{ tilte }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link href="{{static '/img/logo.ico'}}" rel="shortcut icon"/>
+		{{#if showTests}}
+			<link rel="stylesheet" href="{{static '/vendor/mocha.css'}}">
+		{{/if}}
+		<!-- hplus -->
+		<link href="{{static '/vendor/hplus/css/bootstrap.min14ed.css?v=3.3.6'}}" 		rel="stylesheet"/>
+	    <link href="{{static '/vendor/hplus/css/font-awesome.min93e3.css?v=4.4.0'}}" 	rel="stylesheet"/>
+	    <link href="{{static '/vendor/hplus/css/plugins/morris/morris-0.4.3.min.css'}}" rel="stylesheet"/>
+	    <link href="{{static '/vendor/hplus/css/animate.min.css'}}" 					rel="stylesheet"/>
+	    <link href="{{static '/vendor/hplus/css/style.min862f.css?v=4.1.0'}}" 			rel="stylesheet"/>
+	    <link href="{{static '/css/main.css'}}" 										rel="stylesheet"/>
+	</head>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<div id="wrapper">
+		<!-- 左侧导航栏 -->
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				 <div class="nav-close">
+				 	<i class="fa fa-times-circle"></i>
+            	</div>
+            	<div class="sidebar-collapse">
+            		 <ul class="nav" id="side-menu">
+            		 	<li class="nav-header">
+	                        <div class="dropdown profile-element">
+	                            <span><img alt="image" class="img-circle admin-avatar" src="{{static '/img/blog-avatar.png'}}" /></span>
+	                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+	                               <span class="clear">
+	                               <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
+	                               <span class="text-muted text-xs block">Owner<b class="caret"></b></span>
+	                               </span>
+	                            </a>
+	                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+	                                <li><a class="J_menuItem" href="/admin/avatar">修改头像</a>
+	                                </li>
+	                                <li><a class="J_menuItem" href="/admin/profile">个人资料</a>
+	                                </li>
+	                                <li class="divider"></li>
+	                                <li><a href="/admin/logout">安全退出</a>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                        <div class="logo-element">H+
+	                        </div>
+                    	</li>
+                    	<li id="menu-console">
+	                        <a href="/admin/console" >
+	                        <i class="fa fa-dashboard"></i> 
+	                        <span class="nav-label">控制台</span></a>
+	                    </li>
+                    	<li>
+	                        <a href="#">
+	                            <i class="fa fa-tasks"></i>
+	                            <span class="nav-label">文章</span>
+	                            <span class="fa arrow"></span>
+	                        </a>
+	                        <ul class="nav nav-second-level">
+	                            <li>
+	                                <a class="J_menuItem" href="index_v1.html" data-index="0">所有文章</a>
+	                            </li>
+	                            <li>
+	                                <a  href="/admin/article-edit" data-index="1">写文章</a>
+	                            </li>
+	                        </ul>
+
+                    </li>	
+            		 </ul>
+            	</div>
+			</nav>
+			<div id="page-wrapper" class="gray-bg dashbard-1">
+					{{{body}}}
+				<div class="footer">
+                	<div class="pull-right">&copy; 2014-2015 闽ICP备16031908号-1
+                </div>
+            </div>
+			</div>
+		</div>
+	
+	<!-- hplus  -->
+	<script src="{{static '/vendor/hplus/js/jquery.min.js?v=2.1.4'}}"></script>
+    <script src="{{static '/vendor/hplus/js/bootstrap.min.js?v=3.3.6'}}"></script>
+	<script src="{{static '/vendor/hplus/js/plugins/metisMenu/jquery.metisMenu.js'}}"></script>
+    <script src="{{static '/vendor/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js'}}"></script>
+    <script src="{{static '/vendor/hplus/js/plugins/layer/layer.min.js'}}"></script>
+    <script src="{{static '/vendor/hplus/js/hplus.min.js?v=4.1.0'}}"></script>
+    <script src="{{static '/vendor/hplus/js/contabs.min.js'}}"></script>
+    <script src="{{static '/vendor/hplus/js/plugins/pace/pace.min.js'}}"></script>
+	
+	</body>
+</html>
