@@ -1,41 +1,45 @@
 
 <link rel="stylesheet" href="{{static '/vendor/editormd/css/editormd.css'}}" />
 <input id="article-title" class="editor-title" type="text" name="article-title" value="无标题文章">
-<div id="test-editormd">
+
+<div class="editormd-wraper">
+   <div id="test-editormd">
     <textarea id="article-context" style="display:none;">[TOC]
 
-#### Disabled options
+    #### Disabled options
 
-- TeX (Based on KaTeX);
-- Emoji;
-- Task lists;
-- HTML tags decode;
-- Flowchart and Sequence Diagram;
+    - TeX (Based on KaTeX);
+    - Emoji;
+    - Task lists;
+    - HTML tags decode;
+    - Flowchart and Sequence Diagram;
 
-#### Editor.md directory
+    #### Editor.md directory
 
-    editor.md/
-            lib/
-            css/
-            scss/
-            tests/
-            fonts/
-            images/
-            plugins/
-            examples/
-            languages/     
-            editormd.js
-            ...
+        editor.md/
+                lib/
+                css/
+                scss/
+                tests/
+                fonts/
+                images/
+                plugins/
+                examples/
+                languages/     
+                editormd.js
+                ...
 
-```html
-&lt;!-- English --&gt;
-&lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
+    ```html
+    &lt;!-- English --&gt;
+    &lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
 
-&lt;!-- 繁體中文 --&gt;
-&lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
-```
-</textarea>
+    &lt;!-- 繁體中文 --&gt;
+    &lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
+    ```
+    </textarea>
+    </div> 
 </div>
+
 <script src="{{static '/vendor/editormd/js/editormd.min.js'}}"></script>
 <script type="text/javascript">
 	var testEditor;
@@ -52,7 +56,7 @@
     $(function() {
         testEditor = editormd("test-editormd", {
             width   : "100%",
-            height  : "100%",
+            height  : "",
             syncScrolling : "single",
             path    : "{{static '/vendor/editormd/lib/'}}",
             toolbarIcons : function() { return toolbars },
