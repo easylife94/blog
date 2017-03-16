@@ -4448,3 +4448,14 @@ hr.editormd-page-break {
 .editormd-theme-dark .CodeMirror {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
+/*修改样式*/
+.markdown-body img{ 
+  margin: 10px auto;
+  display: block;
+  width:70%;
+  min-width: 350px;
+  max-width:500px;
+  -moz-border-radius: 5px;  
+  -webkit-border-radius: 5px; 
+  box-shadow:5px 5px 5px rgba(136, 136, 136, 0.75)
+}
