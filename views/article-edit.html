@@ -215,7 +215,7 @@ function VoiceCtrl($scope) {
 					"h1","h2", "h3", "h4", "h5", "h6", "|",
 					"list-ul","list-ol","|",
 					"link","reference-link","image","code","preformatted-text","code-block","table","|",
-					"watch", "fullscreen","preview",
+					"watch", "fullscreen",
 
 					"||", 
 					"status","save","publish","|",
@@ -252,7 +252,10 @@ function VoiceCtrl($scope) {
              }
              */
             onchange : function() {
+		        console.log($("#test-editormd textarea").val());
+		        // ....
 				save();
+		       
 		    }
         });
     });

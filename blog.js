@@ -1,5 +1,6 @@
 var express = require('express');
 var config = require('config');
+var config =  require("config");
 var bodyParser = require('body-parser');
 var static = require('./lib/static');
 var handlebars = require('express-handlebars')
@@ -38,8 +39,10 @@ app.use(require('express-session')());
 
 // see https://github.com/expressjs/body-parser
 // 添加 body-parser 中间件就可以了
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+
 //加载路由
 routes(app);
 

@@ -7,9 +7,7 @@
 	},
 	"blog":{
 		"name" : "Someone's Blog",
-		"cookieSecret" : "blog",
-		"uploadImg" : "/blog/upload/img",
-		"uploadImgSize" : 5242880,//5MB = 1024 * 1024 * 5
+		"cookieSecret" : "blog"
 	},
 	"database":{
 		"host":"localhost",
@@ -17,5 +15,5 @@
 		"password":"root",
 		"database":"blog",
 		"port":3306
-	},
+	}
 }
