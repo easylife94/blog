@@ -3,10 +3,11 @@
 		"name" : "Someone",
 		"avatar":"",
 		"introduction":"Someone like write blog"
-
 	},
 	"blog":{
-		"name" : "Someone's Blog"
+		"name" : "Someone's Blog",
+		"uploadImg" : "d:/blog/upload/img",
+		"uploadImgSize" : 5242880,//5MB = 1024 * 1024 * 5
 	},
 	"database":{
 		"host":"localhost",
@@ -14,5 +15,5 @@
 		"password":"1.root.1",
 		"database":"blog",
 		"port":3306
-	}
+	},
 }
