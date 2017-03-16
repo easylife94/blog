@@ -52,10 +52,11 @@
             type:"post",
             data:{admin:admin,password:password},
             success:function(json){
+                console.log(json);
                 if(json.code == 1){
                     window.location = "/admin/console";
                 }else{
-                    $("#login-err").html(json.err);
+                    $("#login-err").html(json.err).removeClass("hide");
                 }
             },
             error:function(){
