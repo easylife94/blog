@@ -3552,3 +3552,12 @@ hr.editormd-page-break {
   width: 100%;
   padding: 40px;
 }
+/*修改样式*/
+.markdown-body img{ 
+  margin: 10px auto;
+  display: block;
+  max-width:500px;
+  -moz-border-radius: 5px;  
+  -webkit-border-radius: 5px; 
+  box-shadow:5px 5px 5px rgba(136, 136, 136, 0.75)
+}

@@ -4452,8 +4452,6 @@ hr.editormd-page-break {
 .markdown-body img{ 
   margin: 10px auto;
   display: block;
-  width:70%;
-  min-width: 350px;
   max-width:500px;
   -moz-border-radius: 5px;  
   -webkit-border-radius: 5px; 
