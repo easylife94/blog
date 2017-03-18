@@ -67,6 +67,11 @@
   color: #fcf8e3;
   background-color: gray;
 }
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: gray;
+}
 .blog-quot {
   position: relative;
   font-size: 30px;
@@ -103,23 +108,6 @@
 .photo-by {
   display: none;
   font-size: 18px;
-}
-.editor-status {
-  line-height: 27px;
-}
-.editor-title{
-    width: 100%;
-    padding: 0 30px 10px 20px;
-    margin-bottom: 0;
-    font-size: 40px;
-    font-weight: normal;
-    line-height: 40px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border-radius: 0;
-    box-shadow: none;
-    border: 0px;
 }
 footer {
   padding: 8px 0 10px 350px;
@@ -434,10 +422,39 @@ i.comment-num {
 .pull-right {
   float: right;
 }
-.admin-avatar{
+.admin-avatar {
   width: 60px;
 }
-/* mobile css */
+.editor-title {
+  width: 100%;
+  padding: 5px 10px 5px 20px;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 0;
+}
+.editor-status {
+  line-height: 25px;
+}
+.article-page {
+  padding: 10px 50px;
+}
+.article-content {
+  margin-top: 50px;
+}
+.article-title {
+  text-align: center;
+}
+.article-more-info {
+  text-align: center;
+  margin-top: 20px;
+}
+.article-tags .badge {
+  margin-left: 5px;
+}
 @media screen and (max-width: 700px) {
   .nav-bar-blog {
     position: fixed;
@@ -487,5 +504,13 @@ i.comment-num {
   footer {
     padding: 8px ;
   }
-
+  .article-page {
+    padding: 5px;
+    margin-top: 10px;
+  }
+  .article-tags {
+    display: block;
+    margin-left: 0px;
+    margin-right: 5px;
+  }
 }

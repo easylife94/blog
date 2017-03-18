@@ -3,11 +3,14 @@
 		"name" : "Someone",
 		"avatar":"",
 		"introduction":"Someone like write blog"
-
 	},
 	"blog":{
 		"name" : "Someone's Blog",
 		"cookieSecret" : "blog",
+		"resource":{
+			"root":"/blog/res/",
+			"img":"img",
+		},
 		"uploadImgDir":"/blog/upload/img",
 		"uploadImgSize":5242880,//5Mb
 	},

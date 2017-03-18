@@ -27,7 +27,7 @@
 				</div>	
 				<div class="my-info">
 					<div class="my-avatar">
-						<img src="{{static '/img/blog-avatar.png'}}">
+						<a href="/"><img src="{{static '/img/blog-avatar.png'}}"/></a>
 					</div>
 					<div class="my-name">
 						<span>Easy life</span>
@@ -47,11 +47,7 @@
 			</div>
 			<div class="content-blog">
 				{{{body}}}
-
-
-
 			</div>
-			
 		</div>
 		<footer >
 <!-- 
@@ -93,5 +89,26 @@
 
 
 	<script src="{{static '/js/main.js'}}"></script>
+	<script type="text/javascript">
+		var offset = 120;
+		var topx = 0;
+		var marginTop = 200;
+		if(window.innerWidth < 700){
+			var nav = $(".nav-bar-blog");
+			setTimeout(function(){
+				zoom();
+			},1500);
+			nav.click(function(){
+				zoom();
+			});
+		}
+		function zoom(){
+			offset *= -1;
+			topx += offset;
+			marginTop += offset;
+			$(".nav-bar-blog").transition({top:topx}); 
+			$(".content-blog").transition({marginTop:marginTop}); 
+		}
+	</script>
 	</body>
 </html>

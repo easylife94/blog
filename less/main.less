@@ -394,37 +394,66 @@ i.like-num,i.comment-num{
 }
 
 
-  #toolbar {
-                height: 50px;
-                background-color: #444;
-                width: 100%;
-                color: #fff;
-                line-height: 50px;
-            }
-            #container {
-                overflow: auto;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                top: 50px;
-            }
-            #editor-column,
-            #preview-column {
-                width: 49.5%;
-                height: 100%;
-                overflow: auto;
-                position: relative;
-                background-color: #fff;
-            }
-            .pull-left {
-                float: left;
-            }
-
-            .pull-right {
-                float: right;
-            }
-
+#toolbar {
+  height: 50px;
+  background-color: #444;
+  width: 100%;
+  color: #fff;
+  line-height: 50px;
+}
+#container {
+  overflow: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50px;
+}
+#editor-column,
+#preview-column {
+  width: 49.5%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  background-color: #fff;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.admin-avatar{
+  width: 60px;
+}
+.editor-title{
+  width: 100%;
+  padding: 5px 10px 5px 20px;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 0;
+}
+.editor-status{
+  line-height: 25px;
+}
+.article-page{
+  padding: 10px 50px;
+}
+.article-content{
+  margin-top: 50px;
+}
+.article-title{
+  text-align: center;
+}
+.article-more-info{
+  text-align: center;
+  margin-top: 20px;
+}
+.article-tags .badge{margin-left:5px;}
 @media screen and (max-width: 700px) {
    .nav-bar-blog {
    		position: fixed;
@@ -472,7 +501,15 @@ i.like-num,i.comment-num{
 	    display:none;
 	}
 	footer{
-	
 		padding: 8px ;
 	}
+  .article-page{
+    padding: 5px;
+    margin-top:10px;
+  }
+  .article-tags{
+    display:block;
+    margin-left:0px;
+    margin-right:5px;
+  }
 }
